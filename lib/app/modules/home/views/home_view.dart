@@ -360,35 +360,7 @@ class HomeView extends GetView<HomeController> {
                           child: Row(
                             children: [
                               const UpCommingTask(),
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: const [
-                                        Text(
-                                          'My Friends',
-                                          style: TextStyle(
-                                              color: AppColors.primaryText,
-                                              fontSize: 30),
-                                        ),
-                                        Text(
-                                          'More',
-                                          style: TextStyle(
-                                              color: AppColors.primaryText,
-                                              fontSize: 30),
-                                        ),
-                                        Icon(
-                                          Ionicons.arrow_forward,
-                                          color: AppColors.primaryText,
-                                        )
-                                      ],
-                                    ),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              myFriends(),
                             ],
                           ),
                         ),
