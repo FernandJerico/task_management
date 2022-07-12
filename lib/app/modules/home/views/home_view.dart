@@ -103,7 +103,7 @@ class HomeView extends GetView<HomeController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          height: Get.height * 0.4,
+                          height: Get.height * 0.38,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -117,7 +117,7 @@ class HomeView extends GetView<HomeController> {
                               ),
                               // my task
                               SizedBox(
-                                height: 200,
+                                height: 190,
                                 child: ListView(
                                   clipBehavior: Clip.antiAlias,
                                   scrollDirection: Axis.horizontal,
@@ -357,14 +357,16 @@ class HomeView extends GetView<HomeController> {
                             ],
                           ),
                         ),
-                        Expanded(
-                          child: Row(
-                            children: [
-                              const UpCommingTask(),
-                              myFriends(),
-                            ],
-                          ),
-                        ),
+                        !context.isPhone
+                            ? Expanded(
+                                child: Row(
+                                  children: const [
+                                    UpCommingTask(),
+                                    myFriends(),
+                                  ],
+                                ),
+                              )
+                            : const UpCommingTask()
                       ],
                     ),
                   ))
