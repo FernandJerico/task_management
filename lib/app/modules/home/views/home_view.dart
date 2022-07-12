@@ -5,6 +5,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:task_management/app/utils/style/AppColors.dart';
 import '../../../utils/widget/header.dart';
 import '../../../utils/widget/myfriends.dart';
+import '../../../utils/widget/mytask.dart';
 import '../../../utils/widget/sidebar.dart';
 import '../../../utils/widget/upcommingtask.dart';
 import '../controllers/home_controller.dart';
@@ -106,13 +107,13 @@ class HomeView extends GetView<HomeController> {
                           height: Get.height * 0.38,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
+                            children: const [
+                              Text(
                                 'My Task',
                                 style: TextStyle(
                                     color: AppColors.primaryText, fontSize: 30),
                               ),
-                              const SizedBox(
+                              SizedBox(
                                 height: 20,
                               ),
                               // my task
