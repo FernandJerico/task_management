@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:task_management/app/routes/app_pages.dart';
 
 import '../style/AppColors.dart';
 
@@ -17,19 +19,22 @@ class myFriends extends StatelessWidget {
           child: Column(
             children: [
               Row(
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     'My Friends',
                     style:
                         TextStyle(color: AppColors.primaryText, fontSize: 30),
                   ),
-                  Spacer(),
-                  Text(
-                    'More',
-                    style:
-                        TextStyle(color: AppColors.primaryText, fontSize: 20),
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: () => Get.toNamed(Routes.FRIENDS),
+                    child: const Text(
+                      'More',
+                      style:
+                          TextStyle(color: AppColors.primaryText, fontSize: 20),
+                    ),
                   ),
-                  Icon(
+                  const Icon(
                     Ionicons.chevron_forward,
                     color: AppColors.primaryText,
                   )
@@ -42,21 +47,22 @@ class myFriends extends StatelessWidget {
                   height: 400,
                   child: GridView.builder(
                       shrinkWrap: true,
-                      itemCount: 8,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          crossAxisSpacing: 20,
-                          mainAxisSpacing: 20),
+                      itemCount: 9,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 3,
+                              crossAxisSpacing: 20,
+                              mainAxisSpacing: 20),
                       itemBuilder: (context, index) {
                         return Column(
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(100),
-                              child: Image(
+                              child: const Image(
                                 image: AssetImage('assets/images/login.png'),
                               ),
                             ),
-                            Text(
+                            const Text(
                               'Alicia Jasmine',
                               style: TextStyle(color: AppColors.primaryText),
                             )
