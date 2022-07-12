@@ -95,7 +95,11 @@ class ProfileView extends GetView<ProfileController> {
                         : BorderRadius.circular(30),
                     color: Colors.white,
                   ),
-                ))
+                  child: Column(children: [
+                    Expanded(child: Container(),),
+                    SizedBox(height: Get.height * 0.3,child: ,),
+                  ]),  
+                ),)
               ],
             ),
           )
