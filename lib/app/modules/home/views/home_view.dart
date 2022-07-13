@@ -62,7 +62,7 @@ class HomeView extends GetView<HomeController> {
                                   Text(
                                     'Manage task made easy with friends',
                                     style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 13,
                                         color: AppColors.primaryText),
                                   )
                                 ],

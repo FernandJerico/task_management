@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_management/app/utils/style/AppColors.dart';
+import 'package:task_management/app/utils/widget/mytask.dart';
 import '../../../utils/widget/header.dart';
+import '../../../utils/widget/profileW.dart';
 import '../../../utils/widget/sidebar.dart';
 
 import '../controllers/profile_controller.dart';
@@ -84,22 +86,39 @@ class ProfileView extends GetView<ProfileController> {
                       ),
                 // content / isi page / screen
                 Expanded(
-                    child: Container(
-                  padding: const EdgeInsets.all(50),
-                  margin: !context.isPhone
-                      ? const EdgeInsets.all(10)
-                      : const EdgeInsets.all(0),
-                  decoration: BoxDecoration(
-                    borderRadius: !context.isPhone
-                        ? BorderRadius.circular(50)
-                        : BorderRadius.circular(30),
-                    color: Colors.white,
+                  child: Container(
+                    padding: !context.isPhone
+                        ? const EdgeInsets.all(50)
+                        : const EdgeInsets.all(20),
+                    margin: !context.isPhone
+                        ? const EdgeInsets.all(10)
+                        : const EdgeInsets.all(0),
+                    decoration: BoxDecoration(
+                      borderRadius: !context.isPhone
+                          ? BorderRadius.circular(50)
+                          : BorderRadius.circular(30),
+                      color: Colors.white,
+                    ),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: const [
+                          ProfileWidget(),
+                          Text(
+                            'My Task',
+                            style: TextStyle(
+                                color: AppColors.primaryText, fontSize: 30),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            height: 180,
+                            child: myTask(),
+                          ),
+                        ]),
                   ),
-                  child: Column(children: [
-                    Expanded(child: Container(),),
-                    SizedBox(height: Get.height * 0.3,child: ,),
-                  ]),  
-                ),)
+                )
               ],
             ),
           )

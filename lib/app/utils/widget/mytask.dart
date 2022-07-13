@@ -10,7 +10,7 @@ class myTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 190,
+      height: 185,
       child: ListView(
         clipBehavior: Clip.antiAlias,
         scrollDirection: Axis.horizontal,

@@ -60,11 +60,14 @@ class myFriends extends StatelessWidget {
                               borderRadius: BorderRadius.circular(100),
                               child: const Image(
                                 image: AssetImage('assets/images/login.png'),
+                                height: 95,
                               ),
                             ),
+                            SizedBox(),
                             const Text(
                               'Alicia Jasmine',
-                              style: TextStyle(color: AppColors.primaryText),
+                              style: TextStyle(
+                                  color: AppColors.primaryText, fontSize: 15),
                             )
                           ],
                         );
