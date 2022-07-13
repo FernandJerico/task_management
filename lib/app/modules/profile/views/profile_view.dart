@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_management/app/utils/style/AppColors.dart';
 import 'package:task_management/app/utils/widget/mytask.dart';
+import '../../../routes/app_pages.dart';
 import '../../../utils/widget/header.dart';
 import '../../../utils/widget/profileW.dart';
 import '../../../utils/widget/sidebar.dart';
@@ -67,20 +68,38 @@ class ProfileView extends GetView<ProfileController> {
                               ],
                             ),
                             const Spacer(),
-                            const Icon(Ionicons.notifications,
-                                color: AppColors.primaryText),
-                            const SizedBox(
-                              width: 15,
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child: const CircleAvatar(
-                                backgroundColor: Colors.amber,
-                                radius: 25,
-                                foregroundImage:
-                                    AssetImage('assets/images/avatar.jpg'),
+                            GestureDetector(
+                              onTap: () {
+                                Get.defaultDialog(
+                                  title: 'Sign Out',
+                                  content: const Text('Are you sure?'),
+                                  cancel: ElevatedButton(
+                                      onPressed: () => Get.back(),
+                                      child: const Text('Cancel')),
+                                  confirm: ElevatedButton(
+                                    onPressed: () => Get.toNamed(Routes.LOGIN),
+                                    child: const Text('Sign Out'),
+                                  ),
+                                );
+                              },
+                              child: Row(
+                                children: const [
+                                  Text(
+                                    'Sign Out',
+                                    style:
+                                        TextStyle(color: AppColors.primaryText),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Icon(
+                                    Ionicons.log_out_outline,
+                                    color: AppColors.primaryText,
+                                    size: 24,
+                                  ),
+                                ],
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
