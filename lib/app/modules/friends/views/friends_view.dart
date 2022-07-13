@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_management/app/utils/style/AppColors.dart';
 import '../../../utils/widget/header.dart';
+import '../../../utils/widget/myfriends.dart';
 import '../../../utils/widget/sidebar.dart';
 import '../controllers/friends_controller.dart';
 
@@ -84,7 +85,9 @@ class FriendsView extends GetView<FriendsController> {
                 // content / isi page / screen
                 Expanded(
                     child: Container(
-                  padding: const EdgeInsets.all(50),
+                  padding: !context.isPhone
+                      ? const EdgeInsets.all(50)
+                      : const EdgeInsets.all(20),
                   margin: !context.isPhone
                       ? const EdgeInsets.all(10)
                       : const EdgeInsets.all(0),
@@ -94,6 +97,67 @@ class FriendsView extends GetView<FriendsController> {
                         : BorderRadius.circular(30),
                     color: Colors.white,
                   ),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'People You May Know',
+                          style: TextStyle(
+                              fontSize: 30, color: AppColors.primaryText),
+                        ),
+                        SizedBox(
+                          height: 200,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            shrinkWrap: true,
+                            clipBehavior: Clip.antiAlias,
+                            itemCount: 10,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Stack(
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(50),
+                                      child: const Image(
+                                        image: AssetImage(
+                                            'assets/images/login.png'),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      bottom: 10,
+                                      left: 50,
+                                      child: Text(
+                                        'Alicia Jasmine',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                    Positioned(
+                                        bottom: 0,
+                                        right: 0,
+                                        child: SizedBox(
+                                          height: 36,
+                                          width: 36,
+                                          child: ElevatedButton(
+                                            onPressed: () {},
+                                            style: ElevatedButton.styleFrom(
+                                                padding: EdgeInsets.zero,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            50))),
+                                            child: Icon(
+                                                Ionicons.add_circle_outline),
+                                          ),
+                                        ))
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        myFriends()
+                      ]),
                 ))
               ],
             ),
