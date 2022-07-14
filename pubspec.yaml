@@ -2,23 +2,26 @@ name: task_management
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment:
-  sdk: ">=2.16.2 <3.0.0"
+environment: 
+  sdk: '>=2.16.2 <3.0.0'
 
-dependencies:
+dependencies: 
   cupertino_icons: ^1.0.2
   get: 4.6.5
-  flutter:
-    sdk: flutter
   ionicons: ^0.1.2
-
-dev_dependencies:
-  flutter_lints: ^1.0.0
-  flutter_test:
+  firebase_core: 1.19.2
+  firebase_auth: 3.4.2
+  flutter: 
     sdk: flutter
 
-flutter:
-  assets:
+dev_dependencies: 
+  flutter_lints: ^1.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  assets: 
     - assets/images/
     - assets/icons/
   uses-material-design: true
+
