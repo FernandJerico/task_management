@@ -47,7 +47,7 @@ class HomeView extends GetView<HomeController> {
                                 ),
                               ),
                               const SizedBox(
-                                width: 15,
+                                width: 5,
                               ),
                               Column(
                                 //mainAxisAlignment: MainAxisAlignment.start,
@@ -62,7 +62,7 @@ class HomeView extends GetView<HomeController> {
                                   Text(
                                     'Manage task made easy with friends',
                                     style: TextStyle(
-                                        fontSize: 13,
+                                        fontSize: 10,
                                         color: AppColors.primaryText),
                                   )
                                 ],

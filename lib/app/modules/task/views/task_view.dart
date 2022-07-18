@@ -43,7 +43,7 @@ class TaskView extends GetView<TaskController> {
                               ),
                             ),
                             const SizedBox(
-                              width: 15,
+                              width: 5,
                             ),
                             Column(
                               //mainAxisAlignment: MainAxisAlignment.start,
@@ -58,7 +58,7 @@ class TaskView extends GetView<TaskController> {
                                 Text(
                                   'Manage task made easy with friends',
                                   style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 10,
                                       color: AppColors.primaryText),
                                 )
                               ],

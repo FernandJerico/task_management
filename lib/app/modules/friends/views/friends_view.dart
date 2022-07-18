@@ -44,7 +44,7 @@ class FriendsView extends GetView<FriendsController> {
                               ),
                             ),
                             const SizedBox(
-                              width: 15,
+                              width: 5,
                             ),
                             Column(
                               //mainAxisAlignment: MainAxisAlignment.start,
@@ -59,7 +59,7 @@ class FriendsView extends GetView<FriendsController> {
                                 Text(
                                   'Manage task made easy with friends',
                                   style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 10,
                                       color: AppColors.primaryText),
                                 )
                               ],
