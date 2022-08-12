@@ -1,15 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_management/app/routes/app_pages.dart';
 
+import '../../data/controller/auth_controller.dart';
 import '../style/AppColors.dart';
 
 class myFriends extends StatelessWidget {
-  const myFriends({
-    Key? key,
-  }) : super(key: key);
-
+  final authCon = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -43,34 +42,54 @@ class myFriends extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
-                  height: 400,
-                  child: GridView.builder(
+              StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+                stream: authCon.streamFriends(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                  var myFriends = (snapshot.data!.data()
+                      as Map<String, dynamic>)['emailFriends'];
+                  return GridView.builder(
                       shrinkWrap: true,
-                      itemCount: 9,
+                      itemCount: myFriends.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: context.isPhone ? 2 : 3,
                           crossAxisSpacing: 20,
                           mainAxisSpacing: 20),
                       itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(150),
-                              child: const Image(
-                                image: AssetImage('assets/images/login.png'),
-                                height: 125,
-                              ),
-                            ),
-                            SizedBox(),
-                            const Text(
-                              'Alicia Jasmine',
-                              style: TextStyle(
-                                  color: AppColors.primaryText, fontSize: 15),
-                            )
-                          ],
-                        );
-                      })),
+                        return StreamBuilder<
+                                DocumentSnapshot<Map<String, dynamic>>>(
+                            stream: authCon.streamUsers(myFriends[index]),
+                            builder: (context, snapshot2) {
+                              if (snapshot2.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const Center(
+                                    child: CircularProgressIndicator());
+                              }
+                              var data = snapshot2.data!.data();
+
+                              return Column(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(100),
+                                    child: Image(
+                                      image: NetworkImage(data!['photo']),
+                                    ),
+                                  ),
+                                  const SizedBox(),
+                                  Text(
+                                    data['name'],
+                                    style: TextStyle(
+                                      color: AppColors.primaryText,
+                                    ),
+                                  )
+                                ],
+                              );
+                            });
+                      });
+                },
+              ),
             ],
           ),
         ),
