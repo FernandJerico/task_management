@@ -20,7 +20,8 @@ class ProfileWidget extends StatelessWidget {
                     child: CircleAvatar(
                       backgroundColor: Colors.amber,
                       radius: 120,
-                      foregroundImage: AssetImage('assets/images/avatar.jpg'),
+                      foregroundImage: NetworkImage(
+                          'https://lh3.googleusercontent.com/zJL71AFYS1nGSRTsRU5Nt1xCwOfVFmwzzD87m_f4EcSIGGcX2esmHOOrfoGmrs4Zoov52EZ2EXHakBAPlcc7Qw4jLte5KGte=w960-rj-nu-e365'),
                     ),
                   ),
                 ),
@@ -34,12 +35,12 @@ class ProfileWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        'Fernand Jerico',
+                        'Tiara Monika',
                         style: TextStyle(
                             color: AppColors.primaryText, fontSize: 30),
                       ),
                       Text(
-                        'fernand.jerico.ti.20@cic.ac.id',
+                        'tiara.monika.ti.20@cic.ac.id',
                         style: TextStyle(
                             color: AppColors.primaryText, fontSize: 16),
                       ),
@@ -55,19 +56,20 @@ class ProfileWidget extends StatelessWidget {
                     child: CircleAvatar(
                       backgroundColor: Colors.amber,
                       radius: 100,
-                      foregroundImage: AssetImage('assets/images/avatar.jpg'),
+                      foregroundImage: NetworkImage(
+                          'https://lh3.googleusercontent.com/zJL71AFYS1nGSRTsRU5Nt1xCwOfVFmwzzD87m_f4EcSIGGcX2esmHOOrfoGmrs4Zoov52EZ2EXHakBAPlcc7Qw4jLte5KGte=w960-rj-nu-e365'),
                     ),
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   Text(
-                    'Fernand Jerico',
+                    'Tiara Monika',
                     style:
                         TextStyle(color: AppColors.primaryText, fontSize: 30),
                   ),
                   Text(
-                    'fernand.jerico.ti.20@cic.ac.id',
+                    'tiara.monika.ti.20@cic.ac.id',
                     style:
                         TextStyle(color: AppColors.primaryText, fontSize: 15),
                   ),

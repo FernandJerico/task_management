@@ -33,7 +33,8 @@ class myTask extends StatelessWidget {
                       child: const CircleAvatar(
                         backgroundColor: Colors.amber,
                         radius: 20,
-                        foregroundImage: AssetImage('assets/images/avatar.jpg'),
+                        foregroundImage: NetworkImage(
+                            'https://lh3.googleusercontent.com/zJL71AFYS1nGSRTsRU5Nt1xCwOfVFmwzzD87m_f4EcSIGGcX2esmHOOrfoGmrs4Zoov52EZ2EXHakBAPlcc7Qw4jLte5KGte=w960-rj-nu-e365'),
                       ),
                     ),
                     ClipRRect(
@@ -41,7 +42,8 @@ class myTask extends StatelessWidget {
                       child: const CircleAvatar(
                         backgroundColor: Colors.amber,
                         radius: 20,
-                        foregroundImage: AssetImage('assets/images/avatar.jpg'),
+                        foregroundImage: NetworkImage(
+                            'https://lh3.googleusercontent.com/zJL71AFYS1nGSRTsRU5Nt1xCwOfVFmwzzD87m_f4EcSIGGcX2esmHOOrfoGmrs4Zoov52EZ2EXHakBAPlcc7Qw4jLte5KGte=w960-rj-nu-e365'),
                       ),
                     ),
                     const Spacer(),
@@ -96,7 +98,8 @@ class myTask extends StatelessWidget {
                       child: const CircleAvatar(
                         backgroundColor: Colors.amber,
                         radius: 20,
-                        foregroundImage: AssetImage('assets/images/avatar.jpg'),
+                        foregroundImage: NetworkImage(
+                            'https://lh3.googleusercontent.com/zJL71AFYS1nGSRTsRU5Nt1xCwOfVFmwzzD87m_f4EcSIGGcX2esmHOOrfoGmrs4Zoov52EZ2EXHakBAPlcc7Qw4jLte5KGte=w960-rj-nu-e365'),
                       ),
                     ),
                     ClipRRect(
@@ -104,7 +107,8 @@ class myTask extends StatelessWidget {
                       child: const CircleAvatar(
                         backgroundColor: Colors.amber,
                         radius: 20,
-                        foregroundImage: AssetImage('assets/images/avatar.jpg'),
+                        foregroundImage: NetworkImage(
+                            'https://lh3.googleusercontent.com/zJL71AFYS1nGSRTsRU5Nt1xCwOfVFmwzzD87m_f4EcSIGGcX2esmHOOrfoGmrs4Zoov52EZ2EXHakBAPlcc7Qw4jLte5KGte=w960-rj-nu-e365'),
                       ),
                     ),
                     const Spacer(),
@@ -159,7 +163,8 @@ class myTask extends StatelessWidget {
                       child: const CircleAvatar(
                         backgroundColor: Colors.amber,
                         radius: 20,
-                        foregroundImage: AssetImage('assets/images/avatar.jpg'),
+                        foregroundImage: NetworkImage(
+                            'https://lh3.googleusercontent.com/zJL71AFYS1nGSRTsRU5Nt1xCwOfVFmwzzD87m_f4EcSIGGcX2esmHOOrfoGmrs4Zoov52EZ2EXHakBAPlcc7Qw4jLte5KGte=w960-rj-nu-e365'),
                       ),
                     ),
                     ClipRRect(
@@ -167,7 +172,8 @@ class myTask extends StatelessWidget {
                       child: const CircleAvatar(
                         backgroundColor: Colors.amber,
                         radius: 20,
-                        foregroundImage: AssetImage('assets/images/avatar.jpg'),
+                        foregroundImage: NetworkImage(
+                            'https://lh3.googleusercontent.com/zJL71AFYS1nGSRTsRU5Nt1xCwOfVFmwzzD87m_f4EcSIGGcX2esmHOOrfoGmrs4Zoov52EZ2EXHakBAPlcc7Qw4jLte5KGte=w960-rj-nu-e365'),
                       ),
                     ),
                     const Spacer(),

@@ -82,24 +82,17 @@ class LoginView extends GetView<LoginController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const [
                               Text(
-                                "Welcome :)",
+                                "Welcome",
                                 style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 30,
                                 ),
                               ),
                               Text(
-                                "Sign In First",
+                                "Please Sign In First",
                                 style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 17,
-                                ),
-                              ),
-                              Text(
-                                "To Continue Use The Task Management",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 14,
                                 ),
                               ),
                             ],
